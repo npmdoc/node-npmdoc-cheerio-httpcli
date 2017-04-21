@@ -1,0 +1,2414 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/ktty1220/cheerio-httpcli#readme"
+
+    >cheerio-httpcli (v0.6.11)</a>
+</h1>
+<h4>http client module with cheerio & iconv(-lite) & promise</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cheerio-httpcli">module cheerio-httpcli</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cheerio-httpcli.</span>debug</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cheerio-httpcli.</span>followMetaRefresh</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cheerio-httpcli.</span>forceHtml</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cheerio-httpcli.</span>gzip</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cheerio-httpcli.</span>referer</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.fetch">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.</span>fetch
+            <span class="apidocSignatureSpan">(url, param, encode, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.fetchSync">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.</span>fetchSync
+            <span class="apidocSignatureSpan">(url, param, encode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.reset">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.set">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.</span>set
+            <span class="apidocSignatureSpan">(name, value, nomerge)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.setBrowser">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.</span>setBrowser
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.setIconvEngine">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.</span>setIconvEngine
+            <span class="apidocSignatureSpan">(icmod)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">cheerio-httpcli.</span>timeout</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.</span>client</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.</span>core</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.</span>download</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.</span>encoding</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.</span>headers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.</span>maxDataSize</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.</span>util</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cheerio-httpcli.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cheerio-httpcli.client">module cheerio-httpcli.client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.checkRedirect">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>checkRedirect
+            <span class="apidocSignatureSpan">(res, body)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.cheerio">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>cheerio
+            <span class="apidocSignatureSpan">(selector, context, root, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.engine">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>engine
+            <span class="apidocSignatureSpan">(uri, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.error">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>error
+            <span class="apidocSignatureSpan">(err, options, extra, result)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.execute">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>execute
+            <span class="apidocSignatureSpan">(options, resolve, reject)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.executeSync">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>executeSync
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.fail">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>fail
+            <span class="apidocSignatureSpan">(err, options, extra, result, reject)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.getCookiesFromOption">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>getCookiesFromOption
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.hasHeader">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>hasHeader
+            <span class="apidocSignatureSpan">(header)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.prepare">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>prepare
+            <span class="apidocSignatureSpan">(method, url, param, encode, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.request">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>request
+            <span class="apidocSignatureSpan">(param, retry, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.reset">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.responseToResult">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>responseToResult
+            <span class="apidocSignatureSpan">(err, res, body, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.client.run">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>run
+            <span class="apidocSignatureSpan">(method, url, param, encode, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>core</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>encoding</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>jar</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cheerio-httpcli.core">module cheerio-httpcli.core</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>debug</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>followMetaRefresh</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>forceHtml</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>gzip</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>referer</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.core.fetch">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>fetch
+            <span class="apidocSignatureSpan">(url, param, encode, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.core.fetchSync">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>fetchSync
+            <span class="apidocSignatureSpan">(url, param, encode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.core.reset">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.core.set">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>set
+            <span class="apidocSignatureSpan">(name, value, nomerge)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.core.setBrowser">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>setBrowser
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.core.setIconvEngine">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>setIconvEngine
+            <span class="apidocSignatureSpan">(icmod)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>timeout</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>download</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>headers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>maxDataSize</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cheerio-httpcli.encoding">module cheerio-httpcli.encoding</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.encoding.convert">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>convert
+            <span class="apidocSignatureSpan">(enc, buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.encoding.detect">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>detect
+            <span class="apidocSignatureSpan">(buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.encoding.detectByBuffer">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>detectByBuffer
+            <span class="apidocSignatureSpan">(buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.encoding.detectByHeader">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>detectByHeader
+            <span class="apidocSignatureSpan">(buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.encoding.escape">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>escape
+            <span class="apidocSignatureSpan">(enc, str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.encoding.iconvLoad">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>iconvLoad
+            <span class="apidocSignatureSpan">(module)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.encoding.isUTF8">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>isUTF8
+            <span class="apidocSignatureSpan">(enc)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cheerio-httpcli.util">module cheerio-httpcli.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.util.decodeEntities">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.util.</span>decodeEntities
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.util.documentInfo">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.util.</span>documentInfo
+            <span class="apidocSignatureSpan">($)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.util.inArray">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.util.</span>inArray
+            <span class="apidocSignatureSpan">(array, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cheerio-httpcli.util.paramFilter">
+            function <span class="apidocSignatureSpan">cheerio-httpcli.util.</span>paramFilter
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cheerio-httpcli" id="apidoc.module.cheerio-httpcli">module cheerio-httpcli</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.fetch" id="apidoc.element.cheerio-httpcli.fetch">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.</span>fetch
+        <span class="apidocSignatureSpan">(url, param, encode, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetch = function (url, param, encode, callback) {
+  return client.run(&#x27;GET&#x27;, url, param, encode, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+var client = require(&#x27;cheerio-httpcli&#x27;);
+
+// Googleで「node.js」について検索する。
+var word = &#x27;node.js&#x27;;
+
+client.<span class="apidocCodeKeywordSpan">fetch</span>(&#x27;http://www.google.com/search&#x27;, { q: word }, function (err, $,
+res, body) {
+// レスポンスヘッダを参照
+console.log(res.headers);
+
+// HTMLタイトルを表示
+console.log($(&#x27;title&#x27;).text());
+
+// リンク一覧を表示
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.fetchSync" id="apidoc.element.cheerio-httpcli.fetchSync">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.</span>fetchSync
+        <span class="apidocSignatureSpan">(url, param, encode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetchSync = function (url, param, encode) {
+  return client.run(&#x27;GET&#x27;, url, param, encode, &#x27;sync&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* 呼び出し時のパラメータは`fetch()`のプロミス形式と同様です。
+* 戻り値はプロミス形式の`then`に渡されるオブジェクトと同様の形式です。
+
+```js
+var client = require(&#x27;cheerio-httpcli&#x27;);
+
+var result1 = client.<span class="apidocCodeKeywordSpan">fetchSync</span>(&#x27;http://foo.bar.baz/&#x27;);
+console.log(result1);
+// =&#x3e; {
+//    error: ...,
+//    $: ...,
+//    response: ...,
+//    body: ...
+// }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.reset" id="apidoc.element.cheerio-httpcli.reset">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+  // リクエストヘッダ
+  this.headers = {};
+  // タイムアウトまでの時間(効いているかどうか不明)
+  this.timeout = 30000;
+  // gzip転送する/しない
+  this.gzip = true;
+  // Refererを自動設定する/しない
+  this.referer = true;
+  // &#x3c;meta[http-equiv=refresh]&#x3e;を検知してリダイレクトする/しない
+  this.followMetaRefresh = false;
+  // 受信を許可する最大のサイズ
+  this.maxDataSize = null;
+  // XML自動判別を使用しない
+  this.forceHtml = false;
+  // デバッグオプション
+  this.debug = false;
+
+  client.reset();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // 受信を許可する最大のサイズ
+  this.maxDataSize = null;
+  // XML自動判別を使用しない
+  this.forceHtml = false;
+  // デバッグオプション
+  this.debug = false;
+
+  client.<span class="apidocCodeKeywordSpan">reset</span>();
+},
+
+/**
+ * プロパティを操作
+ *
+ * @param name  操作するプロパティ名
+ * @param value 挿入する値
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.set" id="apidoc.element.cheerio-httpcli.set">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.</span>set
+        <span class="apidocSignatureSpan">(name, value, nomerge)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (name, value, nomerge) {
+  // プロパティが存在するかチェック
+  if (! Object.keys(this).some(function (prop) {
+    return (prop === name &#x26;&#x26; typeof val !== &#x27;function&#x27;);
+  })) {
+    throw new Error(&#x27;no such property &#x22;&#x27; + name + &#x27;&#x22;&#x27;);
+  }
+
+  // オブジェクトへの代入ならマージする
+  if (nomerge !== true &#x26;&#x26; typeof this[name] === &#x27;object&#x27; &#x26;&#x26; typeof value === &#x27;object&#x27;) {
+    this[name] = assign(this[name], value);
+  } else {
+    this[name] = value;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`name`で指定したプロパティに値`value`を設定するメソッドです。
+オブジェクトはマージされます。`nomerge`が`true`の時はマージしません。
+
+```js
+var client = require(&#x27;cheerio-httpcli&#x27;);
+
+client.<span class="apidocCodeKeywordSpan">set</span>(&#x27;timeout&#x27;, 10000); // タイムアウトを30秒から10秒へ変更
+```
+
+存在するプロパティについては [プロパティ](#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3) を参照してください。
+
+&#x3e; 現状ではTypeScript上でのプロパティ更新用のメソッドですが、直接プロパティに値を代入する方式は将来的に廃止する予定です。
+
+### setBrowser(browser-type)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.setBrowser" id="apidoc.element.cheerio-httpcli.setBrowser">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.</span>setBrowser
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setBrowser = function (type) {
+  if (type in browsers) {
+    this.headers[&#x27;User-Agent&#x27;] = browsers[type];
+    return true;
+  }
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### setBrowser(browser-type)
+
+ブラウザごとのUser-Agentをワンタッチで設定するメソッドです。
+
+```js
+var client = require(&#x27;cheerio-httpcli&#x27;);
+
+client.<span class="apidocCodeKeywordSpan">setBrowser</span>(&#x27;chrome&#x27;);    // GoogleChromeのUser-Agentに変更
+client.setBrowser(&#x27;android&#x27;);   // AndroidのUser-Agentに変更
+client.setBrowser(&#x27;googlebot&#x27;); // GooglebotのUser-Agentに変更
+```
+
+User-Agentを指定したブラウザのものに変更した場合は`true`、対応していないブラウザを指定するとUser-Agentは変更されずに`false`が返ります。
+
+対応しているブラウザは以下のとおりです。
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.setIconvEngine" id="apidoc.element.cheerio-httpcli.setIconvEngine">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.</span>setIconvEngine
+        <span class="apidocSignatureSpan">(icmod)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setIconvEngine = function (icmod) {
+  if (! encoding.iconvLoad(icmod)) {
+    throw new Error(&#x27;Cannot find module &#x22;&#x27; + icmod + &#x27;&#x22;&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+##### サンプル
+
+```js
+var client = require(&#x27;cheerio-httpcli&#x27;);
+
+// あえてiconv-liteを使用
+client.<span class="apidocCodeKeywordSpan">setIconvEngine</span>(&#x27;iconv-lite&#x27;);
+client.fetch( ...
+```
+
+### reset()
+
+cheerio-httpcliはシングルインスタンスで動作するモジュールなので、そのプロセスが動作している間は各種設定やクッキーを共有して保持し続けます。
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cheerio-httpcli.client" id="apidoc.module.cheerio-httpcli.client">module cheerio-httpcli.client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.checkRedirect" id="apidoc.element.cheerio-httpcli.client.checkRedirect">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>checkRedirect
+        <span class="apidocSignatureSpan">(res, body)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkRedirect = function (res, body) {
+  // POST後のリダイレクトはrequestモジュールでは自動で飛んでくれない(と思う)
+  if (/^30\d$/.test(res.statusCode) &#x26;&#x26; res.headers.location) {
+    return urlParser.resolve(res.request.uri.href, res.headers.location);
+  }
+
+  // ここから先はHTMLの場合のみ
+  if (! this.core.followMetaRefresh || ! /html/.test(res.headers[&#x27;content-type&#x27;])) {
+    return null;
+  }
+
+  // METAタグのrefreshがHTML内にあればリダイレクト
+  // IEの時だけリダイレクトとか考慮するのが面倒なのでコメントは全部削除
+  var chkBody = (body || &#x27;&#x27;).toString(&#x27;utf-8&#x27;).replace(reMetaRefresh.comment, &#x27;&#x27;);
+  var metaRefresh = chkBody.match(reMetaRefresh.tag);
+  if (metaRefresh) {
+    var refreshUrl = (metaRefresh[0].match(reMetaRefresh.url) || [])[1];
+    // refreshのURLが相対パスの場合があるので絶対パス化
+    return urlParser.resolve(res.request.uri.href, refreshUrl);
+  }
+
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return;
+  }
+  req.emit(&#x27;error&#x27;, err);
+  return;
+}
+
+// requestモジュールが対応していないタイプのリダイレクトチェック
+var location = this.<span class="apidocCodeKeywordSpan">checkRedirect</span>(res, body);
+if (location) {
+  retry = retry || 0;
+  if (retry &#x3e; 5) {
+    err = new Error(&#x27;redirect limit over&#x27;);
+    if (callback) {
+      callback(err, res, body);
+      return;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.cheerio" id="apidoc.element.cheerio-httpcli.client.cheerio">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>cheerio
+        <span class="apidocSignatureSpan">(selector, context, root, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cheerio = function (selector, context, root, options) {
+  if (!(this instanceof Cheerio)) return new Cheerio(selector, context, root, options);
+
+  this.options = _.defaults(options || {}, this.options);
+
+  // $(), $(null), $(undefined), $(false)
+  if (!selector) return this;
+
+  if (root) {
+    if (typeof root === &#x27;string&#x27;) root = parse(root, this.options);
+    this._root = Cheerio.call(this, root);
+  }
+
+  // $($)
+  if (selector.cheerio) return selector;
+
+  // $(dom)
+  if (isNode(selector))
+    selector = [selector];
+
+  // $([dom])
+  if (Array.isArray(selector)) {
+    _.forEach(selector, _.bind(function(elem, idx) {
+      this[idx] = elem;
+    }, this));
+    this.length = selector.length;
+    return this;
+  }
+
+  // $(&#x3c;html&#x3e;)
+  if (typeof selector === &#x27;string&#x27; &#x26;&#x26; isHtml(selector)) {
+    return Cheerio.call(this, parse(selector, this.options).children);
+  }
+
+  // If we don&#x27;t have a context, maybe we have a root, from loading
+  if (!context) {
+    context = this._root;
+  } else if (typeof context === &#x27;string&#x27;) {
+    if (isHtml(context)) {
+      // $(&#x27;li&#x27;, &#x27;&#x3c;ul&#x3e;...&#x3c;/ul&#x3e;&#x27;)
+      context = parse(context, this.options);
+      context = Cheerio.call(this, context);
+    } else {
+      // $(&#x27;li&#x27;, &#x27;ul&#x27;)
+      selector = [context, selector].join(&#x27; &#x27;);
+      context = this._root;
+    }
+  // $(&#x27;li&#x27;, node), $(&#x27;li&#x27;, [nodes])
+  } else if (!context.cheerio) {
+    context = Cheerio.call(this, context);
+  }
+
+  // If we still don&#x27;t have a context, return
+  if (!context) return this;
+
+  // #id, .class, tag
+  return context.find(selector);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.engine" id="apidoc.element.cheerio-httpcli.client.engine">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>engine
+        <span class="apidocSignatureSpan">(uri, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function request(uri, options, callback) {
+  if (typeof uri === &#x27;undefined&#x27;) {
+    throw new Error(&#x27;undefined is not a valid uri or options object.&#x27;)
+  }
+
+  var params = initParams(uri, options, callback)
+
+  if (params.method === &#x27;HEAD&#x27; &#x26;&#x26; paramsHaveRequestBody(params)) {
+    throw new Error(&#x27;HTTP HEAD requests MUST NOT include a request body.&#x27;)
+  }
+
+  return new request.Request(params)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.error" id="apidoc.element.cheerio-httpcli.client.error">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>error
+        <span class="apidocSignatureSpan">(err, options, extra, result)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (err, options, extra, result) {
+  extra = extra || {};
+  result = result || {};
+
+  // callback形式 or 同期処理
+  if (typeOf(options.callback) === &#x27;function&#x27; || options.callback === &#x27;sync&#x27;) {
+    return this.fail(err, options, extra, result);
+  }
+
+  // promise形式(promiseオブジェクトを返す)
+  return new RSVP.Promise((function (resolve, reject) {
+    return this.fail(err, options, extra, result, reject);
+  }).bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// ①ダウンロードマネージャーの設定(全ダウンロードイベントがここで処理される)
+client.download
+.on(&#x27;ready&#x27;, function (stream) {
+  stream.pipe(fs.createWriteStream(&#x27;/path/to/image.png&#x27;));
+  console.log(stream.url.href + &#x27;をダウンロードしました&#x27;);
+})
+.on(&#x27;error&#x27;, function (err) {
+  console.<span class="apidocCodeKeywordSpan">error</span>(err.url + &#x27;をダウンロードできませんでした: &#x27; + err.message);
+})
+.on(&#x27;end&#x27;, function () {
+  console.log(&#x27;ダウンロードが完了しました&#x27;);
+});
+
+// ④並列ダウンロード制限の設定
+client.download.parallel = 4;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.execute" id="apidoc.element.cheerio-httpcli.client.execute">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>execute
+        <span class="apidocSignatureSpan">(options, resolve, reject)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execute = function (options, resolve, reject) {
+  // リクエスト実行
+  this.request(options.param, (function (err, res, body) {
+    // レスポンスから処理結果オブジェクト作成
+    var obj = this.responseToResult(err, res, body, options);
+    if (obj.err) {
+      this.fail(obj.err, options, obj.extra, obj.result, reject);
+      return;
+    }
+
+    // promise処理時とcallback処理時で処理の返し方を切り替え
+    var result = obj.result;
+    if (typeOf(options.callback) === &#x27;function&#x27;) {
+      options.callback(result.error, result.$, result.response, result.body);
+    } else {
+      resolve(result);
+    }
+  }).bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      return this.executeSync(options);
+    }
+
+    // 非同期処理
+    if (typeOf(options.callback) !== &#x27;function&#x27;) {
+      // callbackを指定しなかった場合はpromiseオブジェクトを返す
+      return new RSVP.Promise((function (resolve, reject) {
+        this.<span class="apidocCodeKeywordSpan">execute</span>(options, resolve, reject);
+      }).bind(this));
+    }
+    this.execute(options);
+    /*eslint-disable consistent-return*/ return; /*eslint-enable consistent-return*/
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.executeSync" id="apidoc.element.cheerio-httpcli.client.executeSync">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>executeSync
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">executeSync = function (options) {
+  var args = {
+    param: options.param,
+    core: {},
+    cookies: this.getCookiesFromOption(options)
+  };
+
+  // jarはJSON化せず別途cookie付加するのでここではセットしない
+  delete args.param.jar;
+
+  // workerに渡すcoreオプション取得(関数やdownloadオブジェクトは渡さない)
+  each(this.core, function (val, key) {
+    if (typeOf(val) !== &#x27;function&#x27; &#x26;&#x26; key !== &#x27;download&#x27;) {
+      args.core[key] = val;
+    }
+  });
+
+  // spawnSyncでworker.jsでリクエスト処理を行う
+  var worker = [ path.join(__dirname, &#x27;worker.js&#x27;) ];
+  var result = spawnSync(process.execPath, worker, {
+    input: JSON.stringify(args),
+    encoding: &#x27;utf-8&#x27;
+  });
+  var message = (result.status === 0) ? result.stderr : null;
+
+  // worker.jsが出力したJSONを取得して処理結果オブジェクトを作成
+  var json = {};
+  try {
+    json = JSON.parse(result.stdout);
+  } catch (e) {
+    message = &#x27;An error occurred during the sync request: &#x27; + e.message;
+  }
+
+  // worker.jsのjarが取得したcookieをこちらのjarにセット
+  var Cookie = require(&#x27;tough-cookie&#x27;).Cookie;
+  if (json.response &#x26;&#x26; typeOf(json.cookies) === &#x27;array&#x27;) {
+    each(json.cookies, (function (c) {
+      this.jar.setCookie(
+        Cookie.fromJSON(c).toString(),
+        json.response.request.uri.href
+      );
+    }).bind(this));
+  }
+  options.param.jar = this.jar;
+
+  var err = (message) ? new Error(message) : null;
+  var body = (json.body) ? new Buffer(json.body) : null;
+  var obj = this.responseToResult(err, json.response, body, options);
+  if (obj.err) {
+    return this.fail(obj.err, options, obj.extra, obj.result);
+  }
+  return obj.result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    debugParams[label].cookies = cookies;
+  }
+  process.stderr.write(prettyjson.render(debugParams) + &#x27;\n\n&#x27;);
+}
+
+// 同期処理
+if (isSync) {
+  return this.<span class="apidocCodeKeywordSpan">executeSync</span>(options);
+}
+
+// 非同期処理
+if (typeOf(options.callback) !== &#x27;function&#x27;) {
+  // callbackを指定しなかった場合はpromiseオブジェクトを返す
+  return new RSVP.Promise((function (resolve, reject) {
+    this.execute(options, resolve, reject);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.fail" id="apidoc.element.cheerio-httpcli.client.fail">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>fail
+        <span class="apidocSignatureSpan">(err, options, extra, result, reject)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fail = function (err, options, extra, result, reject) {
+  extra = extra || {};
+  result = result || {};
+  var error = (err instanceof Error) ? err : new Error(err);
+  if (options.param.uri) {
+    error.url = options.param.uri;
+  }
+  if (options.param.form) {
+    error.param = options.param.form;
+  } else if (options.param.qs) {
+    error.param = options.param.qs;
+  }
+  each(extra, function (exVal, exKey) {
+    if (typeOf(exVal) !== &#x27;undefined&#x27;) {
+      error[exKey] = exVal;
+    }
+  });
+
+  // callback形式
+  if (typeOf(options.callback) === &#x27;function&#x27;) {
+    return options.callback(error, result.$, result.response, result.body);
+  }
+
+  // promise形式
+  if (reject) {
+    each(result, function (val, name) {
+      if (typeOf(val) !== &#x27;undefined&#x27;) {
+        error[name] = val;
+      }
+    });
+    return reject(error);
+  }
+
+  // 同期処理
+  result.error = error;
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+error: function (err, options, extra, result) {
+  extra = extra || {};
+  result = result || {};
+
+  // callback形式 or 同期処理
+  if (typeOf(options.callback) === &#x27;function&#x27; || options.callback === &#x27;sync&#x27;) {
+    return this.<span class="apidocCodeKeywordSpan">fail</span>(err, options, extra, result);
+  }
+
+  // promise形式(promiseオブジェクトを返す)
+  return new RSVP.Promise((function (resolve, reject) {
+    return this.fail(err, options, extra, result, reject);
+  }).bind(this));
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.getCookiesFromOption" id="apidoc.element.cheerio-httpcli.client.getCookiesFromOption">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>getCookiesFromOption
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCookiesFromOption = function (options) {
+  var cookies = {};
+  each(options.param.jar.getCookies(options.param.uri), function (c) {
+    cookies[c.key] = c.value;
+  });
+  return cookies;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   *           body:     UTF-8化したrequest処理結果のbody
+   *         }
+   */
+  executeSync: function (options) {
+var args = {
+  param: options.param,
+  core: {},
+  cookies: this.<span class="apidocCodeKeywordSpan">getCookiesFromOption</span>(options)
+};
+
+// jarはJSON化せず別途cookie付加するのでここではセットしない
+delete args.param.jar;
+
+// workerに渡すcoreオプション取得(関数やdownloadオブジェクトは渡さない)
+each(this.core, function (val, key) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.hasHeader" id="apidoc.element.cheerio-httpcli.client.hasHeader">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>hasHeader
+        <span class="apidocSignatureSpan">(header)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasHeader = function (header) {
+  header = header.toLowerCase();
+  return (Object.keys(this.core.headers).filter(function (h) {
+    return (h.toLowerCase() === header);
+  }).length &#x3e; 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  encode = param;
+  param = null;
+}
+
+var cli = this.core;
+
+// デフォルトはChromeとして振る舞う
+if (! this.<span class="apidocCodeKeywordSpan">hasHeader</span>(&#x27;User-Agent&#x27;)) {
+  cli.setBrowser(&#x27;chrome&#x27;);
+}
+
+// OSのロケールからAcceptLanguageを設定
+if (! this.hasHeader(&#x27;Accept-Language&#x27;)) {
+  try {
+    // spawn: trueだとexecFileSyncを使うのでできればfalseにしたいが
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.prepare" id="apidoc.element.cheerio-httpcli.client.prepare">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>prepare
+        <span class="apidocSignatureSpan">(method, url, param, encode, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepare = function (method, url, param, encode, callback) {
+  // 省略されている引数に合わせて調整
+  if (typeOf(encode) === &#x27;function&#x27;) {
+    callback = encode;
+    encode = null;
+  } else if (typeOf(param) === &#x27;function&#x27;) {
+    callback = param;
+    param = null;
+    encode = null;
+  }
+  if (! encode &#x26;&#x26; typeOf(param) === &#x27;string&#x27; &#x26;&#x26; param.indexOf(&#x27;=&#x27;) === -1) {
+    // 第3引数が文字列でパラメータの指定でもない =&#x3e; paramが省略されてencodeが指定されている
+    encode = param;
+    param = null;
+  }
+
+  var cli = this.core;
+
+  // デフォルトはChromeとして振る舞う
+  if (! this.hasHeader(&#x27;User-Agent&#x27;)) {
+    cli.setBrowser(&#x27;chrome&#x27;);
+  }
+
+  // OSのロケールからAcceptLanguageを設定
+  if (! this.hasHeader(&#x27;Accept-Language&#x27;)) {
+    try {
+      // spawn: trueだとexecFileSyncを使うのでできればfalseにしたいが
+      // windowsだとロケールを取得できる確実な環境変数がなさそう
+      var locale = osLocale.sync({ spawn: (process.platform === &#x27;win32&#x27;) });
+      if (locale) {
+        locale = locale.replace(/_/g, &#x27;-&#x27;);
+        // en-USだとロケール取得に失敗した可能性があるので何もしない
+        if (locale !== &#x27;en-US&#x27;) {
+          cli.headers[&#x27;Accept-Language&#x27;] = locale.replace(/_/g, &#x27;-&#x27;) + &#x27;,en-US&#x27;;
+        }
+      }
+    } catch (/*eslint-disable no-unused-vars*/ e /*eslint-enable no-unused-vars*/) {
+      // ロケールが取得できない場合は何もしない
+    }
+  }
+
+  // Acceptヘッダにそれっぽいのを付加しておく
+  if (! this.hasHeader(&#x27;Accept&#x27;)) {
+    cli.headers.Accept = &#x27;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#x27;;
+  }
+
+  // リクエストヘッダ作成
+  var parsed = urlParser.parse(url);
+  var reqHeader = assign({ Host: parsed.host }, cli.headers);
+
+  var options = {
+    param: {
+      uri: url,
+      method: method,
+      encoding: null,  // Bufferでコンテンツを取得する
+      headers: reqHeader,
+      timeout: cli.timeout,
+      gzip: cli.gzip,
+      time: true,
+      followRedirect: true,
+      jar: this.jar,
+      secureOptions: constants.SSL_OP_NO_TLSv1_2  // とりあえず付けてみた
+    },
+    encode: encode,
+    callback: callback
+  };
+
+  if ((typeOf(param) === &#x27;object&#x27; &#x26;&#x26; Object.keys(param).length &#x3e; 0) || (param || &#x27;&#x27;).length &#x3e; 0) {
+    options.param[(method === &#x27;GET&#x27;) ? &#x27;qs&#x27; : &#x27;form&#x27;] = param;
+  }
+
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    throw new Error(&#x27;sync request is not support on Electron&#x27;);
+  }
+
+  isSync = true;
+  callback = null;
+}
+
+var options = this.<span class="apidocCodeKeywordSpan">prepare</span>(method, url, param, encode, callback);
+
+// デバッグ情報
+if (this.core.debug) {
+  var label = &#x27;[DEBUG]&#x27;;
+  var debugParams = {};
+  debugParams[label] = {};
+  each([ &#x27;uri&#x27;, &#x27;method&#x27;, &#x27;headers&#x27;, &#x27;qs&#x27;, &#x27;form&#x27; ], function (v) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.request" id="apidoc.element.cheerio-httpcli.client.request">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>request
+        <span class="apidocSignatureSpan">(param, retry, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (param, retry, callback) {
+  if (typeOf(retry) === &#x27;function&#x27;) {
+    callback = retry;
+    retry = 0;
+  }
+
+  // レスポンスのサイズを計測するためのバッファ
+  var buffer = &#x27;&#x27;;
+  var maxDataSize = this.core.maxDataSize;
+
+  // リクエスト実行
+  var req = request(param, (function (err, res, body) {
+    if (err) {
+      if (callback) {
+        callback(err, res, body);
+        return;
+      }
+      req.emit(&#x27;error&#x27;, err);
+      return;
+    }
+
+    // requestモジュールが対応していないタイプのリダイレクトチェック
+    var location = this.checkRedirect(res, body);
+    if (location) {
+      retry = retry || 0;
+      if (retry &#x3e; 5) {
+        err = new Error(&#x27;redirect limit over&#x27;);
+        if (callback) {
+          callback(err, res, body);
+          return;
+        }
+        req.emit(&#x27;error&#x27;, err);
+        return;
+      }
+
+      // パラメータの調整
+      if (! /^30\d$/.test(res.statusCode)) {
+        // METAタグrefreshの場合はリファラーを更新
+        param.headers.Referer = param.uri;
+      }
+      var parsed = urlParser.parse(location);
+      param.headers.Host = parsed.host;
+      param.uri = location;
+      param.method = &#x27;GET&#x27;;
+      delete param.form;
+      delete param.qs;
+      this.request(param, retry + 1, callback);
+      return;
+    }
+
+    if (callback) {
+      callback(null, res, body);
+      return;
+    }
+  }).bind(this)).on(&#x27;data&#x27;, function (chunk) {
+    if (maxDataSize !== null) {
+      // バッファにチャンクを追加
+      buffer += chunk;
+
+      // 制限を超過したら中止
+      if (buffer.length &#x3e; maxDataSize) {
+        req.abort();
+        callback(new Error(&#x27;data size limit over&#x27;));
+        return;
+      }
+    }
+  });
+
+  return req;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  var parsed = urlParser.parse(location);
+  param.headers.Host = parsed.host;
+  param.uri = location;
+  param.method = &#x27;GET&#x27;;
+  delete param.form;
+  delete param.qs;
+  this.<span class="apidocCodeKeywordSpan">request</span>(param, retry + 1, callback);
+  return;
+}
+
+if (callback) {
+  callback(null, res, body);
+  return;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.reset" id="apidoc.element.cheerio-httpcli.client.reset">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+  // クッキーオブジェクト作り直し
+  this.jar = request.jar();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // 受信を許可する最大のサイズ
+  this.maxDataSize = null;
+  // XML自動判別を使用しない
+  this.forceHtml = false;
+  // デバッグオプション
+  this.debug = false;
+
+  client.<span class="apidocCodeKeywordSpan">reset</span>();
+},
+
+/**
+ * プロパティを操作
+ *
+ * @param name  操作するプロパティ名
+ * @param value 挿入する値
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.responseToResult" id="apidoc.element.cheerio-httpcli.client.responseToResult">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>responseToResult
+        <span class="apidocSignatureSpan">(err, res, body, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">responseToResult = function (err, res, body, options) {
+  // 処理結果格納先
+  var result = {};
+
+  // クッキー取得
+  if (res) {
+    res.cookies = this.getCookiesFromOption(options);
+    Object.freeze(res.cookies);
+  }
+
+  result.response = res;
+
+  if (err) {
+    return {
+      err: err,
+      result: result
+    };
+  }
+  if ((body || []).length === 0) {
+    return {
+      err: &#x27;no content&#x27;,
+      extra: { statusCode: res.statusCode },
+      result: result
+    };
+  }
+
+  // Buffer状態のHTMLコンテンツからエンコーディングを判定してUTF-8に変換
+  var enc = options.encode || this.encoding.detect(body);
+  if (enc) {
+    enc = enc.toLowerCase();
+    try {
+      body = this.encoding.convert(enc, body);
+    } catch (e) {
+      return {
+        err: e,
+        extra: { charset: enc },
+        result: result
+      };
+    }
+  }
+  result.body = body.toString(&#x27;utf8&#x27;);
+
+  // cheerioでHTMLコンテンツをパース &#x26; 現在のページ情報を追加
+  var cheerioOpt = {
+    decodeEntities: true,
+    xmlMode: (! this.core.forceHtml &#x26;&#x26; (
+      (res &#x26;&#x26; /[\/\+]xml\b/.test(res.headers[&#x27;content-type&#x27;])) ||
+      /\.(rss|rdf|atom|opml|xslt?)\b/.test(options.param.uri)
+      // Content-Typeか拡張子でXMLであると判別された場合はxmlModeをON
+    ))
+  };
+  result.$ = this.cheerio.load(result.body, cheerioOpt);
+  result.$._root._documentInfo = {
+    url: res.request.uri.href,
+    encoding: enc,
+    isXml: cheerioOpt.xmlMode
+  };
+  result.$.documentInfo = function () {
+    return this._root._documentInfo;
+  };
+
+  // 素の$.htmlはエンティティ化してしまうので退避
+  result.$.entityHtml = result.$.html;
+  result.$.html = function () {
+    return cutil.decodeEntities(
+      this.entityHtml.apply(this, Array.prototype.slice.call(arguments))
+    );
+  };
+
+  // HTMLが取得できてもレスポンスステータスが20xでない場合(ソフト404など)はエラーとして処理する
+  if (String(res.statusCode).substr(0, 2) !== &#x27;20&#x27;) {
+    return {
+      err: &#x27;server status&#x27;,
+      extra: { statusCode: res.statusCode },
+      result: result
+    };
+  }
+
+  if (this.core.referer) {
+    // 次のリクエスト時に今アクセスしたURLをRefererとする
+    this.core.headers.Referer = result.$._root._documentInfo.url;
+  }
+
+  return { result: result };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   * @param resolve (promise処理時のみ)resolve関数
+   * @param reject  (promise処理時のみ)reject関数
+   */
+  execute: function (options, resolve, reject) {
+    // リクエスト実行
+    this.request(options.param, (function (err, res, body) {
+// レスポンスから処理結果オブジェクト作成
+var obj = this.<span class="apidocCodeKeywordSpan">responseToResult</span>(err, res, body, options);
+if (obj.err) {
+  this.fail(obj.err, options, obj.extra, obj.result, reject);
+  return;
+}
+
+// promise処理時とcallback処理時で処理の返し方を切り替え
+var result = obj.result;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.client.run" id="apidoc.element.cheerio-httpcli.client.run">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.client.</span>run
+        <span class="apidocSignatureSpan">(method, url, param, encode, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (method, url, param, encode, callback) {
+  var isSync = false;
+  if (callback === &#x27;sync&#x27;) {
+    // Electron上ではSync系メソッドはサポート外
+    // ※process.execPathで別スクリプトを実行する性質上
+    if (process.versions.electron) {
+      throw new Error(&#x27;sync request is not support on Electron&#x27;);
+    }
+
+    isSync = true;
+    callback = null;
+  }
+
+  var options = this.prepare(method, url, param, encode, callback);
+
+  // デバッグ情報
+  if (this.core.debug) {
+    var label = &#x27;[DEBUG]&#x27;;
+    var debugParams = {};
+    debugParams[label] = {};
+    each([ &#x27;uri&#x27;, &#x27;method&#x27;, &#x27;headers&#x27;, &#x27;qs&#x27;, &#x27;form&#x27; ], function (v) {
+      if (options.param[v]) {
+        debugParams[label][v] = options.param[v];
+      }
+    });
+    var cookies = this.getCookiesFromOption(options);
+    if (Object.keys(cookies).length &#x3e; 0) {
+      debugParams[label].cookies = cookies;
+    }
+    process.stderr.write(prettyjson.render(debugParams) + &#x27;\n\n&#x27;);
+  }
+
+  // 同期処理
+  if (isSync) {
+    return this.executeSync(options);
+  }
+
+  // 非同期処理
+  if (typeOf(options.callback) !== &#x27;function&#x27;) {
+    // callbackを指定しなかった場合はpromiseオブジェクトを返す
+    return new RSVP.Promise((function (resolve, reject) {
+      this.execute(options, resolve, reject);
+    }).bind(this));
+  }
+  this.execute(options);
+<span class="apidocCodeCommentSpan">  /*eslint-disable consistent-return*/ return; /*eslint-enable consistent-return*/
+</span>}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param url      リクエスト先のURL
+ * @param param    リクエストパラメータ
+ * @param encode   取得先のHTMLのエンコーディング(default: 自動判定)
+ * @param callback リクエスト完了時のコールバック関数(err, cheerio, response, body)
+ */
+fetch: function (url, param, encode, callback) {
+  return client.<span class="apidocCodeKeywordSpan">run</span>(&#x27;GET&#x27;, url, param, encode, callback);
+},
+
+/**
+ * GETによる同期httpリクエストを実行
+ *
+ * @param url      リクエスト先のURL
+ * @param param    リクエストパラメータ
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cheerio-httpcli.core" id="apidoc.module.cheerio-httpcli.core">module cheerio-httpcli.core</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.core.fetch" id="apidoc.element.cheerio-httpcli.core.fetch">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>fetch
+        <span class="apidocSignatureSpan">(url, param, encode, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetch = function (url, param, encode, callback) {
+  return client.run(&#x27;GET&#x27;, url, param, encode, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+var client = require(&#x27;cheerio-httpcli&#x27;);
+
+// Googleで「node.js」について検索する。
+var word = &#x27;node.js&#x27;;
+
+client.<span class="apidocCodeKeywordSpan">fetch</span>(&#x27;http://www.google.com/search&#x27;, { q: word }, function (err, $,
+res, body) {
+// レスポンスヘッダを参照
+console.log(res.headers);
+
+// HTMLタイトルを表示
+console.log($(&#x27;title&#x27;).text());
+
+// リンク一覧を表示
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.core.fetchSync" id="apidoc.element.cheerio-httpcli.core.fetchSync">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>fetchSync
+        <span class="apidocSignatureSpan">(url, param, encode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetchSync = function (url, param, encode) {
+  return client.run(&#x27;GET&#x27;, url, param, encode, &#x27;sync&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* 呼び出し時のパラメータは`fetch()`のプロミス形式と同様です。
+* 戻り値はプロミス形式の`then`に渡されるオブジェクトと同様の形式です。
+
+```js
+var client = require(&#x27;cheerio-httpcli&#x27;);
+
+var result1 = client.<span class="apidocCodeKeywordSpan">fetchSync</span>(&#x27;http://foo.bar.baz/&#x27;);
+console.log(result1);
+// =&#x3e; {
+//    error: ...,
+//    $: ...,
+//    response: ...,
+//    body: ...
+// }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.core.reset" id="apidoc.element.cheerio-httpcli.core.reset">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+  // リクエストヘッダ
+  this.headers = {};
+  // タイムアウトまでの時間(効いているかどうか不明)
+  this.timeout = 30000;
+  // gzip転送する/しない
+  this.gzip = true;
+  // Refererを自動設定する/しない
+  this.referer = true;
+  // &#x3c;meta[http-equiv=refresh]&#x3e;を検知してリダイレクトする/しない
+  this.followMetaRefresh = false;
+  // 受信を許可する最大のサイズ
+  this.maxDataSize = null;
+  // XML自動判別を使用しない
+  this.forceHtml = false;
+  // デバッグオプション
+  this.debug = false;
+
+  client.reset();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // 受信を許可する最大のサイズ
+  this.maxDataSize = null;
+  // XML自動判別を使用しない
+  this.forceHtml = false;
+  // デバッグオプション
+  this.debug = false;
+
+  client.<span class="apidocCodeKeywordSpan">reset</span>();
+},
+
+/**
+ * プロパティを操作
+ *
+ * @param name  操作するプロパティ名
+ * @param value 挿入する値
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.core.set" id="apidoc.element.cheerio-httpcli.core.set">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>set
+        <span class="apidocSignatureSpan">(name, value, nomerge)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (name, value, nomerge) {
+  // プロパティが存在するかチェック
+  if (! Object.keys(this).some(function (prop) {
+    return (prop === name &#x26;&#x26; typeof val !== &#x27;function&#x27;);
+  })) {
+    throw new Error(&#x27;no such property &#x22;&#x27; + name + &#x27;&#x22;&#x27;);
+  }
+
+  // オブジェクトへの代入ならマージする
+  if (nomerge !== true &#x26;&#x26; typeof this[name] === &#x27;object&#x27; &#x26;&#x26; typeof value === &#x27;object&#x27;) {
+    this[name] = assign(this[name], value);
+  } else {
+    this[name] = value;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`name`で指定したプロパティに値`value`を設定するメソッドです。
+オブジェクトはマージされます。`nomerge`が`true`の時はマージしません。
+
+```js
+var client = require(&#x27;cheerio-httpcli&#x27;);
+
+client.<span class="apidocCodeKeywordSpan">set</span>(&#x27;timeout&#x27;, 10000); // タイムアウトを30秒から10秒へ変更
+```
+
+存在するプロパティについては [プロパティ](#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3) を参照してください。
+
+&#x3e; 現状ではTypeScript上でのプロパティ更新用のメソッドですが、直接プロパティに値を代入する方式は将来的に廃止する予定です。
+
+### setBrowser(browser-type)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.core.setBrowser" id="apidoc.element.cheerio-httpcli.core.setBrowser">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>setBrowser
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setBrowser = function (type) {
+  if (type in browsers) {
+    this.headers[&#x27;User-Agent&#x27;] = browsers[type];
+    return true;
+  }
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### setBrowser(browser-type)
+
+ブラウザごとのUser-Agentをワンタッチで設定するメソッドです。
+
+```js
+var client = require(&#x27;cheerio-httpcli&#x27;);
+
+client.<span class="apidocCodeKeywordSpan">setBrowser</span>(&#x27;chrome&#x27;);    // GoogleChromeのUser-Agentに変更
+client.setBrowser(&#x27;android&#x27;);   // AndroidのUser-Agentに変更
+client.setBrowser(&#x27;googlebot&#x27;); // GooglebotのUser-Agentに変更
+```
+
+User-Agentを指定したブラウザのものに変更した場合は`true`、対応していないブラウザを指定するとUser-Agentは変更されずに`false`が返ります。
+
+対応しているブラウザは以下のとおりです。
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.core.setIconvEngine" id="apidoc.element.cheerio-httpcli.core.setIconvEngine">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.core.</span>setIconvEngine
+        <span class="apidocSignatureSpan">(icmod)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setIconvEngine = function (icmod) {
+  if (! encoding.iconvLoad(icmod)) {
+    throw new Error(&#x27;Cannot find module &#x22;&#x27; + icmod + &#x27;&#x22;&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+##### サンプル
+
+```js
+var client = require(&#x27;cheerio-httpcli&#x27;);
+
+// あえてiconv-liteを使用
+client.<span class="apidocCodeKeywordSpan">setIconvEngine</span>(&#x27;iconv-lite&#x27;);
+client.fetch( ...
+```
+
+### reset()
+
+cheerio-httpcliはシングルインスタンスで動作するモジュールなので、そのプロセスが動作している間は各種設定やクッキーを共有して保持し続けます。
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cheerio-httpcli.encoding" id="apidoc.module.cheerio-httpcli.encoding">module cheerio-httpcli.encoding</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.encoding.convert" id="apidoc.element.cheerio-httpcli.encoding.convert">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>convert
+        <span class="apidocSignatureSpan">(enc, buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convert = function (enc, buffer) {
+  if (this.isUTF8(enc)) {
+    return buffer;
+  }
+  if (/(shift_jis|sjis)/i.test(enc)) {
+    // Shift_JISを指定してIconvで変換すると半角チルダが波ダッシュ(0x301C)に変換されてしまうのでCP932に変更
+    enc = &#x27;CP932&#x27;;
+  }
+  return iconvMod.func(enc, buffer);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+// Buffer状態のHTMLコンテンツからエンコーディングを判定してUTF-8に変換
+var enc = options.encode || this.encoding.detect(body);
+if (enc) {
+  enc = enc.toLowerCase();
+  try {
+    body = this.encoding.<span class="apidocCodeKeywordSpan">convert</span>(enc, body);
+  } catch (e) {
+    return {
+      err: e,
+      extra: { charset: enc },
+      result: result
+    };
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.encoding.detect" id="apidoc.element.cheerio-httpcli.encoding.detect">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>detect
+        <span class="apidocSignatureSpan">(buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">detect = function (buffer) {
+  return this.detectByBuffer(buffer) || this.detectByHeader(buffer);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    err: &#x27;no content&#x27;,
+    extra: { statusCode: res.statusCode },
+    result: result
+  };
+}
+
+// Buffer状態のHTMLコンテンツからエンコーディングを判定してUTF-8に変換
+var enc = options.encode || this.encoding.<span class="apidocCodeKeywordSpan">detect</span>(body);
+if (enc) {
+  enc = enc.toLowerCase();
+  try {
+    body = this.encoding.convert(enc, body);
+  } catch (e) {
+    return {
+      err: e,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.encoding.detectByBuffer" id="apidoc.element.cheerio-httpcli.encoding.detectByBuffer">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>detectByBuffer
+        <span class="apidocSignatureSpan">(buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">detectByBuffer = function (buffer) {
+  var enc = jschardet.detect(buffer);
+  // 高精度で判定できた場合のみ
+  if (enc &#x26;&#x26; enc.encoding &#x26;&#x26; (enc.confidence || 0) &#x3e;= 0.99) {
+    return enc.encoding;
+  }
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  /**
+   * HTMLエンコーディング判定(自動判定 -&#x3e; &#x3c;head&#x3e;タグ判定の順)
+   *
+   * @param buffer HTML(Buffer)
+   * @return 判定できた場合はエンコーディング名
+   */
+  detect: function (buffer) {
+    return this.<span class="apidocCodeKeywordSpan">detectByBuffer</span>(buffer) || this.detectByHeader(buffer);
+  }
+};
+
+// 初期状態では iconv &#x3e; iconv-lite の優先順でロードしておく
+/*eslint-disable no-unused-expressions*/
+encoding.iconvLoad(&#x27;iconv&#x27;) || encoding.iconvLoad(&#x27;iconv-lite&#x27;);
+/*eslint-enable no-unused-expressions*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.encoding.detectByHeader" id="apidoc.element.cheerio-httpcli.encoding.detectByHeader">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>detectByHeader
+        <span class="apidocSignatureSpan">(buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">detectByHeader = function (buffer) {
+  var head = buffer.toString(&#x27;ascii&#x27;).match(reEnc.head);
+  if (head) {
+    var charset = head[1].match(reEnc.charset);
+    if (charset) {
+      return charset[1].trim();
+    }
+  }
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  /**
+   * HTMLエンコーディング判定(自動判定 -&#x3e; &#x3c;head&#x3e;タグ判定の順)
+   *
+   * @param buffer HTML(Buffer)
+   * @return 判定できた場合はエンコーディング名
+   */
+  detect: function (buffer) {
+    return this.detectByBuffer(buffer) || this.<span class="apidocCodeKeywordSpan">detectByHeader</span>(buffer);
+  }
+};
+
+// 初期状態では iconv &#x3e; iconv-lite の優先順でロードしておく
+/*eslint-disable no-unused-expressions*/
+encoding.iconvLoad(&#x27;iconv&#x27;) || encoding.iconvLoad(&#x27;iconv-lite&#x27;);
+/*eslint-enable no-unused-expressions*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.encoding.escape" id="apidoc.element.cheerio-httpcli.encoding.escape">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>escape
+        <span class="apidocSignatureSpan">(enc, str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escape = function (enc, str) {
+  // var re = /^[\w\.\(\)\-!~*&#x27;]+$/;  // encodeURIComponent互換
+  var re = /^[\w~.-]+$/;           // RFC-3986準拠
+  str = String(str);
+  if (re.test(str)) {
+    // エンコード不要
+    return str;
+  }
+
+  // UTF-8から指定したエンコーディングに変換したバッファを回してエスケープ文字列作成
+  var buffer = new Buffer(str);
+  if (! this.isUTF8(enc)) {
+    buffer = iconvMod.func(enc, buffer, true);
+  }
+  return Array.prototype.slice.call(buffer).map(function (b) {
+    if (b &#x3c; 128) {
+      var c = String.fromCharCode(b);
+      if (re.test(c)) {
+        return c;
+      }
+    }
+    return &#x27;%&#x27; + (&#x27;0&#x27; + b.toString(16).toUpperCase()).substr(-2);
+  }).join(&#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  });
+});
+
+// 各種エンコーディングに対応したURLエンコードをする必要があるのでパラメータ文字列を自力で作成
+var formParamArray = [];
+each(formParam, function (val, name) {
+  formParamArray.push(val.map(function (vv) {
+    var escName = encoding.<span class="apidocCodeKeywordSpan">escape</span>(doc.encoding, name);
+    var escVal = encoding.escape(doc.encoding, vv);
+    if (method === &#x27;POST&#x27;) {
+      // application/x-www-form-urlencodedでは半角スペースは%20ではなく+にする
+      escName = escName.replace(/%20/g, &#x27;+&#x27;);
+      escVal = escVal.replace(/%20/g, &#x27;+&#x27;);
+    }
+    return escName + &#x27;=&#x27; + escVal;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.encoding.iconvLoad" id="apidoc.element.cheerio-httpcli.encoding.iconvLoad">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>iconvLoad
+        <span class="apidocSignatureSpan">(module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iconvLoad = function (module) {
+  // モジュール名チェック
+  if (! /^iconv(-(jp|lite))?$/.test(module)) {
+    return false;
+  }
+
+  // モジュールをロード
+  try {
+    iconvMod.engine = require(module);
+  } catch (/*eslint-disable no-unused-vars*/ e /*eslint-enable no-unused-vars*/) {
+    return false;
+  }
+
+  if (iconvMod.engine.Iconv) {
+    // iconv/iconv-jpはIconvというメソッドを持っている
+    iconvMod.func = function (enc, buffer, revert) {
+      enc = enc.toUpperCase();
+      var from = enc;
+      var to = &#x27;UTF-8&#x27;;
+      if (revert) {
+        from = &#x27;UTF-8&#x27;;
+        to = enc;
+      }
+      var cacheKey = from + &#x27;:&#x27; + to;
+      if (! (cacheKey in iconvMod.cache)) {
+        // Iconvオブジェクトをキャッシュする
+        iconvMod.cache[cacheKey] = new iconvMod.engine.Iconv(from, to + &#x27;//TRANSLIT//IGNORE&#x27;);
+      }
+      return iconvMod.cache[cacheKey].convert(buffer);
+    };
+  } else {
+    // iconv-lite用
+    iconvMod.func = function (enc, buffer, revert) {
+      if (! iconvMod.engine.encodingExists(enc)) {
+        // iconv/iconv-jpとエラーオブジェクトの形を合わせる
+        var err = new Error(&#x27;EINVAL, Conversion not supported.&#x27;);
+        err.errno = 22;
+        err.code = &#x27;EINVAL&#x27;;
+        throw err;
+      }
+      return iconvMod.engine[(revert) ? &#x27;encode&#x27; : &#x27;decode&#x27;](buffer, enc);
+    };
+  }
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * 使用するiconvモジュールを指定
+ *
+ * @param icmod iconvモジュール名(iconv|iconv-jp|iconv-lite)
+ */
+setIconvEngine: function (icmod) {
+  if (! encoding.<span class="apidocCodeKeywordSpan">iconvLoad</span>(icmod)) {
+    throw new Error(&#x27;Cannot find module &#x22;&#x27; + icmod + &#x27;&#x22;&#x27;);
+  }
+},
+
+/**
+ * ブラウザごとのUser-Agentをワンタッチ設定
+ *
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.encoding.isUTF8" id="apidoc.element.cheerio-httpcli.encoding.isUTF8">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.encoding.</span>isUTF8
+        <span class="apidocSignatureSpan">(enc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isUTF8 = function (enc) {
+  return /^utf\-?8$/i.test(enc);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * HTML(Buffer)のエンコーディングをUTF-8に変換
+ *
+ * @param enc    変換元のエンコーディング
+ * @param buffer HTML(Buffer)
+ * @return UTF-8に変換後のHTML(Buffer)
+ */
+convert: function (enc, buffer) {
+  if (this.<span class="apidocCodeKeywordSpan">isUTF8</span>(enc)) {
+    return buffer;
+  }
+  if (/(shift_jis|sjis)/i.test(enc)) {
+    // Shift_JISを指定してIconvで変換すると半角チルダが波ダッシュ(0x301C)に変換されてしまうのでCP932に変更
+    enc = &#x27;CP932&#x27;;
+  }
+  return iconvMod.func(enc, buffer);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cheerio-httpcli.util" id="apidoc.module.cheerio-httpcli.util">module cheerio-httpcli.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.util.decodeEntities" id="apidoc.element.cheerio-httpcli.util.decodeEntities">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.util.</span>decodeEntities
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeEntities = function (str) {
+  // 文字列でない場合(cheerioオブジェクトなど)はそのまま返す
+  if (typeOf(str) !== &#x27;string&#x27;) {
+    return str;
+  }
+  return he.decode(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+result.$.documentInfo = function () {
+  return this._root._documentInfo;
+};
+
+// 素の$.htmlはエンティティ化してしまうので退避
+result.$.entityHtml = result.$.html;
+result.$.html = function () {
+  return cutil.<span class="apidocCodeKeywordSpan">decodeEntities</span>(
+    this.entityHtml.apply(this, Array.prototype.slice.call(arguments))
+  );
+};
+
+// HTMLが取得できてもレスポンスステータスが20xでない場合(ソフト404など)はエラーとして処理する
+if (String(res.statusCode).substr(0, 2) !== &#x27;20&#x27;) {
+  return {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.util.documentInfo" id="apidoc.element.cheerio-httpcli.util.documentInfo">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.util.</span>documentInfo
+        <span class="apidocSignatureSpan">($)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">documentInfo = function ($) {
+  if ($.cheerio !== &#x27;[cheerio object]&#x27;) {
+    throw new Error(&#x27;argument is not cheerio object&#x27;);
+  }
+  // 大元の_rootは_originalRootという名称で保持されているらしい by cheerio/lib/static.js
+  return $._root[0]._documentInfo || $._originalRoot._documentInfo;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* [referer](#referer)
+* [followMetaRefresh](#followmetarefresh)
+* [maxDataSize](#maxdatasize)
+* [forceHtml](#forcehtml)
+* [debug](#debug)
+* [download](#download)
+* [cheerioオブジェクトの独自拡張](#cheerio%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E7%8B%AC%E8%87%AA%E6%8B%A1%E5%BC%
+B5)
+* [$.<span class="apidocCodeKeywordSpan">documentInfo</span>()](#documentinfo)
+* [$(_link-element_ or _submit-element_).__click__()](#link-elementclick-callback-)
+* [$(_link-element_ or _submit-element_).__clickSync__()](#link-elementclicksync)
+* [$(_form-element_).__submit__()](#form-elementsubmit-param-callback-)
+* [$(_form-element_).__submitSync__()](#form-elementsubmitsync-param-)
+* [$(_form-element_).__field__()](#form-elementfield-name-value-onnotfound-)
+* [$(_checkbox-element_ or _radio-element_).__tick__()](#checkbox-element-or-radio-elementtick)
+* [$(_checkbox-element_ or _radio-element_).__untick__()](#checkbox-element-or-radio-elementuntick)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.util.inArray" id="apidoc.element.cheerio-httpcli.util.inArray">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.util.</span>inArray
+        <span class="apidocSignatureSpan">(array, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inArray = function (array, val) {
+  if (typeOf(array) !== &#x27;array&#x27;) {
+    throw new Error(array + &#x27; is not Array&#x27;);
+  }
+  return (array.indexOf(val) !== -1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// submit系要素の場合はsubmit()に飛ばす
+var type = $link.attr(&#x27;type&#x27;);
+var is = {
+  a: $link.is(&#x27;a&#x27;),
+  input: $link.is(&#x27;input&#x27;),
+  button: $link.is(&#x27;button&#x27;)
+};
+if ((is.input || is.button) &#x26;&#x26; cutil.<span class="apidocCodeKeywordSpan">inArray</span>([ &#x27;submit&#x27;, &#x27;image
+&#x27; ], type)) {
+  var $form = $link.closest(&#x27;form&#x27;);
+  var param = {};
+  var name = cutil.paramFilter($link.attr(&#x27;name&#x27;));
+  if (name.length &#x3e; 0) {
+    if (type === &#x27;submit&#x27;) {
+      // submit: 押したボタンのnameとvalueを送信する
+      param[name] = $link.val() || $link.attr(&#x27;value&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cheerio-httpcli.util.paramFilter" id="apidoc.element.cheerio-httpcli.util.paramFilter">
+        function <span class="apidocSignatureSpan">cheerio-httpcli.util.</span>paramFilter
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">paramFilter = function (val) {
+  // 0はパラメータとして有効なので残す
+  // null/undefinedは空文字にして返す
+  if (typeOf(val) !== &#x27;number&#x27; &#x26;&#x26; ! val) {
+    val = &#x27;&#x27;;
+  }
+  return val;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  a: $link.is(&#x27;a&#x27;),
+  input: $link.is(&#x27;input&#x27;),
+  button: $link.is(&#x27;button&#x27;)
+};
+if ((is.input || is.button) &#x26;&#x26; cutil.inArray([ &#x27;submit&#x27;, &#x27;image&#x27; ], type)) {
+  var $form = $link.closest(&#x27;form&#x27;);
+  var param = {};
+  var name = cutil.<span class="apidocCodeKeywordSpan">paramFilter</span>($link.attr(&#x27;name&#x27;));
+  if (name.length &#x3e; 0) {
+    if (type === &#x27;submit&#x27;) {
+      // submit: 押したボタンのnameとvalueを送信する
+      param[name] = $link.val() || $link.attr(&#x27;value&#x27;);
+    } else {
+      // image: 押したボタンのname.xとname.y座標を送信する(ダミーなので0)
+      param[name + &#x27;.x&#x27;] = 0;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
